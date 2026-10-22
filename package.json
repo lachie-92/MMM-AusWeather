@@ -1,0 +1,29 @@
+{
+  "name": "mmm-ausweather",
+  "version": "1.0.0",
+  "description": "MagicMirror² module showing Australian weather, rain forecast, sunrise/sunset, UV and sea temperature from Open-Meteo",
+  "main": "MMM-AusWeather.js",
+  "author": "Lachlan Young",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lachie-92/MMM-AusWeather.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lachie-92/MMM-AusWeather/issues"
+  },
+  "homepage": "https://github.com/lachie-92/MMM-AusWeather#readme",
+  "keywords": [
+    "MagicMirror",
+    "weather",
+    "rain",
+    "UV",
+    "sea temperature",
+    "beach",
+    "Open-Meteo",
+    "Australia"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}

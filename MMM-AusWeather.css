@@ -1,0 +1,149 @@
+.ausweather {
+    display: inline-block;
+    min-width: 300px;
+    text-align: left;
+}
+
+.ausweather .status {
+    padding: 10px 0;
+}
+
+/* Current conditions */
+.ausweather .current {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.ausweather .current-icon {
+    font-size: 56px;
+    width: 64px;
+    text-align: center;
+}
+
+.ausweather .current-temp {
+    line-height: 1;
+}
+
+.ausweather .current-text {
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.ausweather .current-details {
+    margin-left: auto;
+    text-align: right;
+    line-height: 1.5;
+}
+
+/* Today and sea rows */
+.ausweather .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    margin-top: 10px;
+}
+
+.ausweather .item {
+    white-space: nowrap;
+}
+
+.ausweather .item i {
+    color: #999;
+    margin-right: 2px;
+}
+
+.ausweather .wi-sunrise,
+.ausweather .wi-sunset {
+    color: #f5b041 !important;
+}
+
+.ausweather .wi-umbrella,
+.ausweather .sea i {
+    color: #5dade2 !important;
+}
+
+/* UV colours follow the Australian UV index scale */
+.ausweather .uv-low i { color: #58b947 !important; }
+.ausweather .uv-moderate i { color: #f7d23e !important; }
+.ausweather .uv-high i { color: #f39c12 !important; }
+.ausweather .uv-very-high i { color: #e74c3c !important; }
+.ausweather .uv-extreme i { color: #9b59b6 !important; }
+
+/* Rain chart */
+.ausweather .rain {
+    margin-top: 14px;
+}
+
+.ausweather .rain-summary {
+    margin-bottom: 6px;
+}
+
+.ausweather .rain-bars,
+.ausweather .rain-labels {
+    display: flex;
+    gap: 3px;
+}
+
+.ausweather .rain-bars {
+    height: 36px;
+    align-items: flex-end;
+    border-bottom: 1px solid #444;
+}
+
+.ausweather .rain-column {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.ausweather .rain-bar {
+    width: 100%;
+    background-color: rgba(93, 173, 226, 0.35);
+    border-radius: 2px 2px 0 0;
+}
+
+.ausweather .rain-bar.likely {
+    background-color: #5dade2;
+}
+
+.ausweather .rain-label {
+    flex: 1;
+    white-space: nowrap;
+    overflow: visible;
+    line-height: 1.6;
+}
+
+/* Daily forecast */
+.ausweather .forecast {
+    margin-top: 12px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.ausweather .forecast td {
+    padding: 2px 0;
+}
+
+.ausweather .forecast .day {
+    width: 70px;
+}
+
+.ausweather .forecast .icon {
+    width: 40px;
+    text-align: center;
+}
+
+.ausweather .forecast .max-temp,
+.ausweather .forecast .min-temp {
+    width: 40px;
+    text-align: right;
+}
+
+.ausweather .forecast .rain-chance {
+    padding-left: 16px;
+    color: #5dade2;
+    text-align: right;
+    white-space: nowrap;
+}

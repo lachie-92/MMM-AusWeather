@@ -63,11 +63,46 @@ Module.register("MMM-AusWeather", {
             return;
         }
 
+        this.startUpdates();
+    },
+
+    startUpdates: function() {
         var self = this;
         this.fetchData();
-        setInterval(function() {
+        this.updateTimer = setInterval(function() {
             self.fetchData();
         }, this.config.updateInterval);
+    },
+
+    // A new location from MMM-MirrorRemote. Only the first MMM-AusWeather
+    // changes, as that's the one the remote saves settings for.
+    notificationReceived: function(notification, payload) {
+        if (notification !== "MIRROR_SETTINGS_CHANGED" || payload.section !== "weather") {
+            return;
+        }
+        if (MM.getModules().find(module => module.name === this.name) !== this) {
+            return;
+        }
+
+        this.config.latitude = payload.value.latitude;
+        this.config.longitude = payload.value.longitude;
+        this.config.beach = payload.value.beach;
+        if (payload.value.header) {
+            this.data.header = payload.value.header;
+        }
+
+        // Clear the old location's weather so it isn't shown under the new name
+        this.weather = null;
+        this.sea = null;
+        this.weatherError = null;
+        this.seaError = null;
+        this.updateDom(this.config.animationSpeed);
+
+        if (this.updateTimer) {
+            this.fetchData();
+        } else {
+            this.startUpdates();
+        }
     },
 
     getStyles: function() {
